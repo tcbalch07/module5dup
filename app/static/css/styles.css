@@ -1,0 +1,113 @@
+/* General Page Styles */
+body {
+    background-color: #1c1c1e;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar img.logo {
+    height: 40px;
+}
+
+.navbar a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar a:hover {
+    color: #e50914; /* Netflix red for an accent */
+}
+
+/* Container for Page Content */
+.container {
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Movies List Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #292929;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+ul li img {
+    width: 50px;
+    height: 75px;
+    border-radius: 4px;
+}
+
+ul li h2 {
+    font-size: 1.5em;
+    color: #e50914;
+    margin: 0;
+}
+
+/* Top 10 Must-Watch Movies Page */
+ol {
+    padding: 0;
+}
+
+ol li {
+    display: flex;
+    align-items: center;
+    background-color: #292929;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+ol li img {
+    width: 70px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+button, a.button {
+    background-color: #e50914;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover, a.button:hover {
+    background-color: #b20710;
+}
+
+.icon {
+    width: 24px;   /* Adjust width as needed */
+    height: 24px;  /* Adjust height as needed */
+    vertical-align: middle;  /* Align icon with text */
+}

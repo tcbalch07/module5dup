@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Top 10 Must-Watch Movies</h1>
+<p>Here’s our list of the top 10 movies that we think everyone should watch at least once. These are timeless classics and modern masterpieces that showcase the best of cinema!</p>
+
+<ol>
+    <li>
+        <img src="{{ url_for('static', filename='images/shawkshank.jpg') }}" alt="The Shawshank Redemption">
+        <h2>The Shawshank Redemption (1994)</h2>
+        <p><strong>Genre:</strong> Drama</p>
+        <p><strong>Why Watch:</strong> A powerful story of hope, friendship, and resilience.</p>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/godfather.jpg') }}" alt="The Godfather">
+        <h2>The Godfather (1972)</h2>
+        <p><strong>Genre:</strong> Crime, Drama</p>
+        <p><strong>Why Watch:</strong> A masterclass in storytelling and one of the most influential films of all time.</p>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/dark_knight.jpg') }}" alt="The Dark Knight">
+        <h2>The Dark Knight (2008)</h2>
+        <p><strong>Genre:</strong> Action, Crime, Drama</p>
+        <p><strong>Why Watch:</strong> A riveting exploration of heroism and morality.</p>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/pulp_fiction.jpg') }}" alt="Pulp Fiction">
+        <h2>Pulp Fiction (1994)</h2>
+        <p><strong>Genre:</strong> Crime, Drama</p>
+        <p><strong>Why Watch:</strong> An unforgettable journey with iconic characters and dialogue.</p>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/lotr.jpg') }}" alt="The Lord of the Rings: The Return of the King">
+        <h2>The Lord of the Rings: The Return of the King (2003)</h2>
+        <p><strong>Genre:</strong> Adventure, Fantasy</p>
+        <p><strong>Why Watch:</strong> A breathtaking epic that redefined the fantasy genre.</p>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/forrest_gump.jpg') }}" alt="Forrest Gump">
+        <h2>Forrest Gump (1994)</h2>
+        <p><strong>Genre:</strong> Drama, Romance</p>
+        <p><strong>Why Watch:</strong> A heartwarming tale that spans decades and captures the essence of American culture.</p>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/inception.jpg') }}" alt="Inception">
+        <h2>Inception (2010)</h2>
+        <p><strong>Genre:</strong> Action, Adventure, Sci-Fi</p>
+        <p><strong>Why Watch:</strong> A mind-bending journey through dreams and reality.</p>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/fight_club.jpg') }}" alt="Fight Club">
+        <h2>Fight Club (1999)</h2>
+        <p><strong>Genre:</strong> Drama</p>
+        <p><strong>Why Watch:</strong> A provocative film that questions societal norms and individual identity.</p>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/matrix.jpg') }}" alt="The Matrix">
+        <h2>The Matrix (1999)</h2>
+        <p><strong>Genre:</strong> Action, Sci-Fi</p>
+        <p><strong>Why Watch:</strong> A groundbreaking sci-fi adventure with stunning visuals and philosophy.</p>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/goodfellas.jpg') }}" alt="Goodfellas">
+        <h2>Goodfellas (1990)</h2>
+        <p><strong>Genre:</strong> Biography, Crime, Drama</p>
+        <p><strong>Why Watch:</strong> An unflinching look at the life and allure of organized crime.</p>
+    </li>
+</ol>
+{% endblock %}
