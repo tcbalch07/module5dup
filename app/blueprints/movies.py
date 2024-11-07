@@ -2,11 +2,11 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from ..db_connect import get_db
 from ..functions import filter_by_genre, filter_by_title, filter_by_year
 
-movies_bp = Blueprint('movies', __name__)
+movies = Blueprint('movies', __name__)
 
 
-@movies_bp.route('/')
-def movies():
+@movies.route('/movie')
+def movie():
     db = get_db()
 
     # Fetch all genres for the dropdown
@@ -28,7 +28,7 @@ def movies():
     return render_template('movies.html', movies=movies, genres=genres)
 
 
-@movies_bp.route('/filter', methods=['GET'])
+@movies.route('/filter', methods=['GET'])
 def filter():
     title = request.args.get('title')
     genre_id = request.args.get('genre')
@@ -51,7 +51,7 @@ def filter():
     return render_template('movies.html', movies=movies, genres=genres)
 
 
-@movies_bp.route('/add', methods=['GET', 'POST'])
+@movies.route('/add', methods=['GET', 'POST'])
 def add_movie():
     if request.method == 'POST':
         title = request.form['title']
@@ -74,7 +74,7 @@ def add_movie():
     return render_template('add_movie.html', genres=genres)
 
 
-@movies_bp.route('/delete/<int:id>')
+@movies.route('/delete/<int:id>')
 def delete_movie(id):
     db = get_db()
     with db.cursor() as cursor:
@@ -84,7 +84,7 @@ def delete_movie(id):
     return redirect(url_for('movies.movies'))
 
 
-@movies_bp.route('/update/<int:id>', methods=['GET', 'POST'])
+@movies.route('/update/<int:id>', methods=['GET', 'POST'])
 def update_movie(id):
     db = get_db()
     if request.method == 'POST':

@@ -1,11 +1,11 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from ..db_connect import get_db
 
-genres_bp = Blueprint('genres', __name__)
+genres = Blueprint('genres', __name__)
 
 
-@genres_bp.route('/')
-def genres():
+@genres.route('/')
+def list_genres():  # Renamed function to avoid conflict
     db = get_db()
     with db.cursor() as cursor:
         cursor.execute("SELECT * FROM genres")  # Example table
@@ -13,7 +13,7 @@ def genres():
     return render_template('genres.html', genres=genres)
 
 
-@genres_bp.route('/add', methods=['POST'])
+@genres.route('/add', methods=['POST'])
 def add_genre():
     name = request.form['name']
 
@@ -24,7 +24,7 @@ def add_genre():
     return redirect(url_for('genres.genres'))
 
 
-@genres_bp.route('/delete/<int:id>')
+@genres.route('/delete/<int:id>')
 def delete_genre(id):
     db = get_db()
     with db.cursor() as cursor:

@@ -8,9 +8,9 @@
 <body>
     <nav class="navbar">
         <a href="{{ url_for('main.index') }}"><img src="{{ url_for('static', filename='images/home.jpg') }}" alt="Home" class="icon"> Home</a>
-        <a href="{{ url_for('movies.movies') }}"><img src="{{ url_for('static', filename='images/playbutton.webp') }}" alt="Movies" class="icon"> Movies List</a>
+        <a href="{{ url_for('movies.movie') }}"><img src="{{ url_for('static', filename='images/playbutton.webp') }}" alt="Movies" class="icon"> Movies List</a>
         <a href="{{ url_for('movies.add_movie') }}">Add New Movie</a>
-        <a href="{{ url_for('genres.genres') }}">Genres</a>
+        <a href="{{ url_for('genres.list_genres') }}">Genres</a>
         <a href="{{ url_for('main.top_10') }}">Top 10 Must-Watch Movies</a>
     </nav>
     <div class="container">

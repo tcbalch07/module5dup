@@ -1,22 +1,26 @@
-from flask import Flask
-from .db_connect import get_db, close_db
-from .blueprints.movies import movies_bp
-from .blueprints.genres import genres_bp
-from .routes import main_bp
+from flask import Flask, g
+from .app_factory import create_app
+from .db_connect import close_db, get_db
 
-def create_app():
-    app = Flask(__name__)
+app = create_app()
+app.secret_key = 'your-secret'  # Replace with an environment variable
 
-    # Register blueprints
-    app.register_blueprint(main_bp)
-    app.register_blueprint(movies_bp, url_prefix='/movies')
-    app.register_blueprint(genres_bp, url_prefix='/genres')
+# Register Blueprints
+from app.blueprints.movies import movies
+from app.blueprints.genres import genres
+from app.routes import main_bp
 
-    # Ensure the database connection is closed after each request
-    app.teardown_appcontext(close_db)
+app.register_blueprint(movies)
+app.register_blueprint(genres)
+app.register_blueprint(main_bp)
 
-    return app
+from . import routes
 
+@app.before_request
+def before_request():
+    g.db = get_db()
 
-
-
+# Setup database connection teardown
+@app.teardown_appcontext
+def teardown_db(exception=None):
+    close_db(exception)
