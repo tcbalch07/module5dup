@@ -2,12 +2,13 @@
 {% block content %}
 <h1>Genres</h1>
 <form method="POST" action="{{ url_for('genres.add_genre') }}">
-    <input type="text" name="name" placeholder="Genre Name">
+    <input type="text" name="name" placeholder="Genre Name" required>
     <button type="submit">Add Genre</button>
 </form>
 <ul>
     {% for genre in genres %}
         <li>{{ genre.name }}
+            <a href="{{ url_for('genres.edit_genre', id=genre.id) }}">Edit</a>
             <a href="{{ url_for('genres.delete_genre', id=genre.id) }}">Delete</a>
         </li>
     {% endfor %}

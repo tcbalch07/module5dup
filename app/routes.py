@@ -9,5 +9,3 @@ def index():
 @main_bp.route('/top10')
 def top_10():
     return render_template('top10.html')
-
-

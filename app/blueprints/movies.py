@@ -98,8 +98,9 @@ def update_movie(id):
             for genre_id in genre_ids:
                 cursor.execute("INSERT INTO movie_genres (movie_id, genre_id) VALUES (%s, %s)", (id, genre_id))
             db.commit()
-        return redirect(url_for('movies.movies'))
+        return redirect(url_for('movies.movie'))
 
+    # Fetch movie details and genres
     with db.cursor() as cursor:
         cursor.execute("SELECT * FROM movies WHERE id = %s", (id,))
         movie = cursor.fetchone()
