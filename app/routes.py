@@ -1,11 +1,8 @@
-from flask import Blueprint, render_template
+from flask import render_template
 
-main_bp = Blueprint('main', __name__)
-
-@main_bp.route('/')
+# Directly define the routes
 def index():
     return render_template('index.html')
 
-@main_bp.route('/top10')
 def top_10():
     return render_template('top10.html')

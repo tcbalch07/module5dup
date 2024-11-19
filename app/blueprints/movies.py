@@ -78,11 +78,12 @@ def add_movie():
 def delete_movie(id):
     db = get_db()
     with db.cursor() as cursor:
+        # Delete associations from movie_genres
         cursor.execute("DELETE FROM movie_genres WHERE movie_id = %s", (id,))
+        # Delete the movie itself
         cursor.execute("DELETE FROM movies WHERE id = %s", (id,))
         db.commit()
-    return redirect(url_for('movies.movies'))
-
+    return redirect(url_for('movies.movie'))
 
 @movies.route('/update/<int:id>', methods=['GET', 'POST'])
 def update_movie(id):

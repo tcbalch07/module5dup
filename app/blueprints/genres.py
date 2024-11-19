@@ -23,7 +23,6 @@ def add_genre():
         db.commit()
     return redirect(url_for('genres.list_genres'))
 
-
 @genres.route('/edit-genre/<int:id>', methods=['GET', 'POST'])
 def edit_genre(id):
     db = get_db()
